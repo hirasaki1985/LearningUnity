@@ -6,9 +6,9 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 8f;
     public float moveableRange = 5.5f;
-    // public float power = 1000f;
-    // public GameObject cannonBall;
-    // public Transform spawnPoint;
+    public float power = 1000f;
+    public GameObject cannonBall;
+    public Transform spawnPoint;
 
     // Start is called before the first frame update
     void Start()
@@ -39,12 +39,10 @@ public class PlayerController : MonoBehaviour
             transform.position.x, -moveableRange, moveableRange),
             transform.position.y);
 
-        /*
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Shoot();
         }
-        */
     }
 
 
@@ -53,18 +51,14 @@ public class PlayerController : MonoBehaviour
         // インスタンス生成
         // spawnPoint変数に設定されたオブジェクトの位置情報が指定される
         // Quaternion.identityとすることで角度(Rotation)を[0,0,0]にしている。
-        /*
         GameObject newBullet =
             Instantiate(cannonBall, spawnPoint.position,
             Quaternion.identity) as GameObject;
-        */
 
         // インスタンスを移動させる
         // AddForceはオブジェクトに対して物理的な力を加える関数
         // 飛ばしたい方向をVector3で指定している。
-        /*
         newBullet.GetComponent<Rigidbody2D>().AddForce(
             Vector3.up * power);
-        */
     }
 }
